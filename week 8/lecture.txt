@@ -1,0 +1,17 @@
+Data Engineering Week 8 (MongoDB Change Stream)
+
+How do you connect to your source system (your company's ERP, a streaming API etc)?
+
+Well, let's look at some code!
+
+This content is taken from the MongoDB University. Comments are mine though. I believe going through the comments on each of the 5 screenshots will tell the story of what is happening at each turn.
+
+- 0. Initialize models and make d db connection
+- 1. Create items and quantities in an inventory collection (table) to sell from later.
+- 2. Open a change stream against the collection and print out all the changes that occur.
+- 3. Simulate a continuous selling (typically from an app for eg) of item by reducing the value/quantities of items on the table.
+- 4. Another connection to the change stream, but here, we have a pipeline checking for a low threshold: 20 from the initial 100.
+
+As a data engineer, this is one of the ways you can continuously move data from a source system to another. As the changes come through, you are processing them and loading in another system or vice versa.
+
+Now, to prepare for possible errors, something you cannot run away from, there a number of other things to add to the pipeline. An important one is keeping a log of time of changes. This helps you know when things broke, and where to go back and recover from.

@@ -1,0 +1,24 @@
+Data Engineering Week 1 (The Data Journey)
+
+This is the pyramid/hierarchy of need in Data Science.
+
+Nelson recently asked which personnel to start with when setting up a data department. To understand what goes on in the business of data, it is important to try and envision the whole journey of data.
+
+It is presumed there is data to work with. You'd be surprised how wrong that could be in some cases. The data journey begins with an understanding of where the business wants to go. This is what data we go after, and informs the vehicle(s) the journey employs:
+
+- Every organization has a database system where data is originally captured. This is the ACQUISITION of data. They range from a (transaction) database used by their ERP, to other sources of data: IoTs, the web, social media etc. The databases here are usually write intensive.
+
+- Although it is not impossible (in short, some pros argue for it), the primary transaction database of these ERP systems, are usually beyond bounds for analytics: transaction latency, schema, distrust (we will discuss these sometime). So, it is important that this data be taken somewhere it can be easily and often queried. A pipeline to move data to this other place is architected, built, maintained and extended by DATA ENGINEERS.
+
+- A master data management system is where data so moved, from various sources, is assembled. Mechanisms are put in place to ensure an order, a governance, such that there is consistency (fidelity and integrity) in the data. Data lakes, warehouses, lake houses etc, sit here.
+
+- Now that we have a understanding of what we want to do, where the data comes from, where we have kept them for use in a strict or loose order, analytics can begin. Here, we busy ourselves with the things that happened and the things that are happening at the moment, in order to understand how we can optimize and operate more effectively.
+
+- Finally, 'Data Science' comes in. We build on the gains of analytics. A understanding of what has happening and is happening gives way to what could happen. This is the domain of machine learning, artificial intelligence, and all data effort to be ready for and play into the future.
+
+I believe the place of the data engineer becomes clear with an explanation of the hierarchy of need in data science.
+
+Back to Nelson's question: which personnel do we want to start with, when setting up a data department?
+
+Next: Transaction vs Analytics Data stores.
+Later: What is Data Engineering?

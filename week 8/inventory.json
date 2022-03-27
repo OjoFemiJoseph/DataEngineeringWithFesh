@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "623c8170817acfdeac2099ec"
+  },
+  "type": "strawberries",
+  "quantity": 9
+},{
+  "_id": {
+    "$oid": "623c8170817acfdeac2099ed"
+  },
+  "type": "bananas",
+  "quantity": 8
+},{
+  "_id": {
+    "$oid": "623c8170817acfdeac2099ee"
+  },
+  "type": "apples",
+  "quantity": 8
+}]

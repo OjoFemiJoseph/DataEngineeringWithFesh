@@ -1,0 +1,3 @@
+
+A little exercise:
+Write a python function that reads an excel file. This function will also take note of how many rows the Excel file holds, and the time of reading the file. Write these information into a csv file kept in the same directory as the Excel file.

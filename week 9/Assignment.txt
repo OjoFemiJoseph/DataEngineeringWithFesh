@@ -1,0 +1,20 @@
+Data Engineering Week 9 - Challenge 0: Initial Full Data Dump.
+
+In the last installment, I showed how we can listen to/watch a MongoDB change stream. A change stream is a continuous set of information that is sent out, 
+when a change occurs on a database. The change could be an insert, an update, a delete or an upsert (create new if query result is null).
+
+Before we begin writing the outcome of these changes into a warehouse or datalakes, for analytics and/or ML, we would have moved the existing data out of the system. 
+This is where our first challenge of this series starts.
+
+Challenge 0: Use any language of your choice. Python is however recommended.
+
+- Connect to the test MongoDB cluster in Week8 and extract all the documents in the inventory collection.
+- Convert this to any format of your choice and save to a file. I will suggest parquet or csv.
+- Create and save another table to hold the run datetime, total time to run, count of documents and success status.
+
+Submit your solution as a LinkedIn post and tag me, if you would want a review. Consider starting a Github repo to hold your set of solutions, which will 
+eventually become part of your profile.
+
+PS: Remember general good practises like functional programming, good documentation and error handling here and there.
+
+Enjoy!

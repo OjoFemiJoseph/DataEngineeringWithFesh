@@ -1,0 +1,23 @@
+Data Engineering Week 4 (What tools does a Data Engineer work with?)
+
+The biggest asset a DE needs is an eye for detail, and a problem solving mentality. If you have both. Let's keep going. If you feel you don't, take a break and go get them. 😁 That said, these are the two most important things you are going to need:
+
+- A programming language good at scripting.
+For this, I will recommend python. There are a number of others. Because you are going to manipulate and move chunks of data, and given that python plays really well with data (integration into various data and big data solutions), you will find this a great advantage.
+
+- SQL.
+If you have been following the series so far, you will find out that the DE interacts with databases, and that the choice of dB for analytics is relational. With this in mind, you cannot escape SQL. There are different flavors, but they are more than 95% (?) same for most expressions. This is your lingo for creating, updating and other interactions with relational databases.
+
+These are the two main things you are going to need. Every other tool out there, is helping you organize your pipeline from source to destination, using the above two.
+
+I am not going to talk about the Airflows, AirBytes, Kafka, DBT and so on. These are all tools that try to make your life easier. Sometimes, they end making it cumbersome, and dragging you into vicious circles that kill productivity and balloon costs. With time, experience and different organizational requirements, the need for these tools will become obvious to you.
+
+A simple data pipeline with the above, written in the python program language, will be:
+
+func1: Create a connection string, connect to a db, query for data according to what you need and return this data.
+
+func2: Pick up the output data from a successful run of func1, process it to meet some conditions (creating new/calculated features as needed), then pass it on to func3.
+
+func3: Pick up the data destined for the warehouse after a successful run of func2, check schema fidelity vs the destination, update destination.
+
+Yes I know, that is rather simplistic. This is actually what all the names you know today in big, small and medium data, are trying to achieve. Once you understand this, you are halfway through in your DE knowledge.

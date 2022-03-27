@@ -1,0 +1,11 @@
+Data Engineering Week 7 (Stream processing)
+
+Instead of loading a table fully or taking out data based on deltas, data can be continually streamed from source.
+
+Every database system and other sources of data, can be 'plugged' into, to listen to 'events' occurring in them. An insert, an update or a delete action in these systems, are events.
+
+DEs build streaming pipelines by making a standing connection to the source, listening to these events. At the instance of any of these, the occurring change or the full changed document is received from the source, into the steam, which is in turn processed and loaded.
+
+In streams, there are producers, throwing events into a queue, and a consumer, picking things in an order, from the queue to process and load. Some streams have the queue keeping state of things either via a cache or an elaborate pseudo storage. Eg: Kafka. Others will just transmit the event, eg: AWS Eventbridge.
+
+Streams, unlike batch pipes, transport much smaller fragments of data, obviously.

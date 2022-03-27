@@ -1,0 +1,15 @@
+Data Engineering Week 2 (Transaction/OLTP vs Analytics/OLAP stores.)
+
+When it comes to the world of data, there are two types of databases by structure, not design. One is optimized for multiple read-write performance, while the other is optimized mostly for reading. The latter is more suited for the business of data.
+
+Per Oracle, the Online Transaction Processing (OLTP) database "enables the real-time execution of large numbers of transactions by large numbers of people, whereas Online Analytical Processing (OLAP) usually involves querying these transactions (also referred to as records) in a database for analytical purposes. OLAP helps companies extract insights from their transaction data so they can use it for making more informed decisions."
+
+Although a Postgres database can do either of the two, it is how data is kept that matters. By the simple need for insights extraction, it is important that an OLAP system can easily relate one record to another. For this reason, relational database management systems (RDBMS) are best suited for them.
+
+Because OLTP databases are optimized for way smaller but massive read-write operations, often occurring in parallel, they can leverage NoSQL systems like MongoDB, DynamoDB etc. This is possible due to the high cardinality and 'schemalessness' they can entertain, making for horizontal scalability and overall faster response times. We will see how this will eventually become a pain for the data engineer.
+
+OLAP systems on the other hand, do not need to respond as fast, but massive chunks of records will be read at once. Imagine analyst reading the sales data of an organization since inception. Read chunks are massive but modification never happens beyond data ingestion. Records are held in a relational manner in OLAP systems. If you have heard of a 'data warehouse', this is the quintessential use for it. We will eventually discuss different ways data is kept in data warehouses that make them 'OLAP'.
+
+So, how does this concern a data engineer? Well...
+
+Next: What is Data Engineering?

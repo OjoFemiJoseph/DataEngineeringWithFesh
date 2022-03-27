@@ -1,0 +1,15 @@
+Data Engineering Week 5 (Batch vs Stream Processing)
+
+Picture an overhead tank being supplied water by a pump from a well or a borehole. There is need to water a vegetable garden with water from this source system. How does the gardener get this done?
+
+1. They can use a watering can: periodically open the tap, fill the can and then go and water the garden. This could happen a number of times in a day (twice or more).
+
+2. They can connect a pipe from the overhead tank, channel it directly to the garden and continuously water the crops via a sprinkler. This way, there is a steady stream of water.
+
+Hey. The second option is unnecessary for watering a garden. Okay. how about a fountain? Yes! We will need a steady uninterrupted flow of water.
+
+The first is the process of a batch data pipeline and the second is that of streaming pipeline. These, in a nutshell, are the two major ways a data pipeline can be instrumented. Like the case already made, different situations and organisational needs, will be needing one strategy over the other. Some will have a combination of both.
+
+The next batch of #DEwithFesh, we will look at situations and needs of organisations that will inform a batch pipeline, as well as the different techniques we can use.
+
+Next: Batch: Full-load vs Deltas.

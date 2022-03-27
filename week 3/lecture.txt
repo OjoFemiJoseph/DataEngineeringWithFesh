@@ -1,0 +1,22 @@
+Data Engineering Week 3 (What is Data Engineering?)
+
+Short answer:
+Move data from source to destination.
+
+Not so short answer:
+Extract data from source; transform and load it into a destination (ETL) or load it into a destination and then transform it (ELT).
+
+Because of the unique needs of the database holding data for transaction (OLTP) and that which the analysts and machine learning and AI engineers (like we saw last week) work with (OLAP), there is need to safely move this data from the former to the latter. This is the primary responsibility of the data engineer.
+
+In other words the DE needs to:
+- Understand the structure of the source system, including a good idea of the schema. This entails close collaboration with the Engineering/Tech team, where the main source is an ERP system. If the source is an external source, a good understanding of the structure and API holding the data is key.
+
+- Architect and build a pipeline to connect and read from the source system. The read/evacuation strategy here be will be determined by the needs of the downstream (final consumers) of the data journey, which in turn is informed by the organisation's need: point in time or fresh on-demand. The tools to be used will in turn be impacted by the need downstream. Sales figures for a day is fine collected once a day, but financial transactions, where there is need to watch for fraud, or tinker with limits, needs to be updated up to miliseconds where possible.
+
+- Build the destination database in such a way that business analytics and machine learning can be easily undertaken. This involves strategizing on the schema: do we keep everything related to a department in a single table for eg, or do we want to make a distinction between subjects and their attributes. In other words, do we want to keep facts separate from dimensions of the fact? Eg: customers on one hand and their purchases on another.
+
+- Transform the data from source, to match the destination database. Depending on the volume, frequency and velocity of the data (aka, depending on whether it is big data or not), this process can be carried out before data is onboarded in its destination, or after it has been onboarded. Trying to process big chunks of data immediately after extraction could increase fail points, so some situations make loading first and transforming later more optimal. What is done depends on the need.
+
+This puts the DE as at a special intersection between business understanding (borne in an organization's transactions systems and other data sources) on one hand and business intelligence and other data science products on the other.
+
+Next: What tools does a Data Engineer work with?

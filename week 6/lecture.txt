@@ -1,0 +1,17 @@
+Data Engineering Week 6 (Batch: Full-load vs Deltas)
+
+Last week, we saw that we can either stream data from source to destination by having a constant flow, or we just take things out on a schedule. Let's talk about how we can do the latter.
+
+At the start of the life of a data pipeline, a full-load needs to be done. Think about it, the data already in the source system needs to be fully taken to the destination. After this initial evacuation, at scheduled times, the pipeline will run again, so that the destination will catch up with the source.
+
+Full-Load (Again, ... and again).
+For some reason, some engineers will find it convenient to keep evacuating the whole source to the destination at these said times, again. And again, do that at the later times. This works. But you can already see the challenges. Depending on the size of the data, this will eventually become a really bad idea down the line. As the source continues to get bigger, the overhead on this process increases (time, cost, latency).
+
+Deltas.
+Every database system keeps a record of what has changed over time. Let's say our batch system runs every 6 hours; this means 4 times a day. In this strategy, at the start of each hour, we will go to the source and get rows/documents that have changed since the last run. Smooth right? Then, the rest of the pipe runs to the end. Unlike full loads, you are guaranteed to have much less data to deal with, less time to process, and lower latency.
+
+Loading tip on the delta strategy:
+At destination, instead of a mix of insert and update, use a delete and insert method. In a transaction, select all the rows in the destination table where a unique identifier of the incoming data match. Delete them, then insert the incoming. Should this fail, the transaction rolls back. If successful, you just updated the changed rows, as well as inserted brand new ones.
+
+Thoughts:
+Since batch systems run at various times of the day, at each point in time, the destination is going to be out of sync with the source. In some organisations, if not most, it's not going to be a big deal. At others, the consequences could be too great. Sometimes, some departments in the same organisation, can be served by different strategies.
